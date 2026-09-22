@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alessandro Raganato | Georgia Institute of Technology</title>
+<meta name="description" content="Alessandro Raganato, Ph.D. researcher in climate physics, School of Earth and Atmospheric Sciences, Georgia Institute of Technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#003057; --navy-deep:#00223E; --gold:#B3A369; --gold-ink:#857437;
+  --paper:#FFFFFF; --stone:#F5F4EF; --ink:#1E2328; --muted:#5B636B; --rule:#DAD8CF;
+  --link:#003057; --on-navy:#FFFFFF; --on-navy-muted:#C9D3DD;
+  --serif:"EB Garamond","Garamond","Adobe Garamond Pro",Georgia,"Times New Roman",serif;
+  --sans:"Libre Franklin","Franklin Gothic Book","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#10161C; --stone:#171F27; --ink:#E6E8EA; --muted:#A3ACB4; --rule:#2B343D;
+    --link:#C9B87E; --gold-ink:#C9B87E; --navy:#0A2A47; --navy-deep:#061C31;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10161C; --stone:#171F27; --ink:#E6E8EA; --muted:#A3ACB4; --rule:#2B343D;
+  --link:#C9B87E; --gold-ink:#C9B87E; --navy:#0A2A47; --navy-deep:#061C31;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.2rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--link);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#000;padding:8px 14px;font-family:var(--sans);font-size:.9rem;z-index:10}
+.skip:focus{left:12px;top:12px}
+
+.container{max-width:1080px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+
+/* ——— masthead ——— */
+.masthead{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.masthead .rule{height:4px;background:var(--gold)}
+.masthead svg{position:absolute;right:-80px;top:-30px;width:640px;height:auto;opacity:.18;pointer-events:none}
+.masthead svg path{fill:none;stroke:var(--gold);stroke-width:1;vector-effect:non-scaling-stroke}
+.mast-inner{position:relative;padding-top:40px;padding-bottom:30px}
+.affil{font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;color:var(--on-navy-muted);margin:0 0 10px}
+.masthead h1{font-weight:400;font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.05;margin:0;letter-spacing:.005em}
+.masthead .title{font-style:italic;font-size:1.25rem;color:var(--on-navy-muted);margin:8px 0 0}
+
+nav.primary{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:5;padding-top:env(safe-area-inset-top,0px)}
+nav.primary ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.primary ul::-webkit-scrollbar{display:none}
+nav.primary a{display:block;padding:14px 16px 12px;font-family:var(--sans);font-size:.86rem;font-weight:500;color:var(--on-navy-muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent}
+nav.primary li:first-child a{padding-left:0}
+nav.primary a:hover{color:#fff}
+nav.primary a[aria-current="page"]{color:#fff;border-bottom-color:var(--gold)}
+
+/* ——— pages ——— */
+main.container{padding-top:56px;padding-bottom:80px}
+.page{display:none}
+.page.active{display:block}
+.page-head{padding-bottom:4px;margin-bottom:28px}
+.page-head h2{font-weight:400;font-size:2.3rem;line-height:1.15;margin:0}
+.page-head p{margin:8px 0 0;color:var(--muted);font-style:italic}
+h3{font-weight:600;font-size:1.3rem;line-height:1.3;margin:0 0 6px}
+h4{font-family:var(--sans);font-weight:600;font-size:.82rem;letter-spacing:.03em;color:var(--gold-ink);margin:0 0 14px}
+p{margin:0 0 1em;max-width:68ch}
+
+/* home */
+.home-grid{display:grid;grid-template-columns:270px minmax(0,1fr);gap:56px;align-items:start}
+.portrait{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--rule);padding:6px;background:var(--paper)}
+.card{margin-top:20px;font-family:var(--sans);font-size:.88rem;line-height:1.55;color:var(--muted)}
+.card strong{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
+.card a{color:var(--ink)}
+.card p{margin:0 0 12px}
+.bio p:first-child{font-size:1.38rem;line-height:1.5}
+.interests{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;padding:0;margin:8px 0 0}
+.interests li{font-family:var(--sans);font-size:.84rem;border:1px solid var(--rule);padding:4px 12px;border-radius:999px;color:var(--ink)}
+.block{margin-top:44px}
+.news{list-style:none;padding:0;margin:0}
+.news li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:18px;padding:12px 0;border-top:1px solid var(--rule)}
+.news li:last-child{border-bottom:1px solid var(--rule)}
+.news time{font-family:var(--sans);font-size:.84rem;color:var(--muted);padding-top:4px;font-variant-numeric:tabular-nums}
+
+/* research */
+.projects{display:grid;gap:0}
+.project{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;padding:30px 0;border-top:1px solid var(--rule)}
+.project:last-child{border-bottom:1px solid var(--rule)}
+.project .side{font-family:var(--sans);font-size:.84rem;color:var(--muted);line-height:1.55}
+.project .side strong{display:block;color:var(--ink);font-weight:600}
+.project .status{display:inline-block;margin-top:8px;color:var(--gold-ink);font-weight:500}
+
+/* publications */
+.pubs{list-style:none;padding:0;margin:0;counter-reset:pub 4}
+.pubs li{counter-increment:pub -1;display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:14px;padding:20px 0;border-top:1px solid var(--rule)}
+.pubs li:last-child{border-bottom:1px solid var(--rule)}
+.pubs li::before{content:"[" counter(pub) "]";font-family:var(--sans);font-size:.84rem;color:var(--muted);padding-top:5px}
+.pubs .t{font-weight:500;display:block;line-height:1.35}
+.pubs .a{display:block;color:var(--muted);font-size:1.08rem;margin-top:4px}
+.pubs .a b{color:var(--ink);font-weight:600}
+.pubs .v{display:block;font-size:1.08rem}
+.pubs .links{display:flex;gap:14px;margin-top:8px;font-family:var(--sans);font-size:.82rem}
+.note{font-family:var(--sans);font-size:.86rem;color:var(--muted);margin-top:22px}
+
+/* cv */
+.cv-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font-family:var(--sans);font-size:.86rem;font-weight:500;background:var(--navy);color:#fff;text-decoration:none;padding:10px 18px;border:1px solid var(--navy)}
+.btn:hover{background:var(--navy-deep)}
+.cv-section{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;padding:28px 0;border-top:1px solid var(--rule)}
+.cv-section > h3{font-size:1.2rem;font-weight:500;font-style:italic}
+.entries{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.entries li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px}
+.entries .what{font-weight:500}
+.entries .when{font-family:var(--sans);font-size:.84rem;color:var(--muted);white-space:nowrap;padding-top:4px;font-variant-numeric:tabular-nums}
+.entries .detail{grid-column:1 / -1;color:var(--muted);font-size:1.08rem}
+.skills{margin:0;display:grid;gap:10px}
+.skills div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:16px}
+.skills dt{font-family:var(--sans);font-size:.86rem;font-weight:600;padding-top:3px}
+.skills dd{margin:0;color:var(--muted);font-size:1.08rem}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px}
+.contact-grid p{font-size:1.12rem}
+.contact-grid .label{font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--gold-ink);margin-bottom:6px}
+
+footer{background:var(--stone);border-top:1px solid var(--rule);padding:26px 0;font-family:var(--sans);font-size:.8rem;color:var(--muted)}
+footer .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+footer a{color:var(--muted)}
+
+@media (max-width:820px){
+  body{font-size:1.14rem}
+  .mast-inner{padding-top:30px;padding-bottom:22px}
+  .masthead svg{width:460px;right:-160px}
+  main.container{padding-top:36px}
+  .home-grid{grid-template-columns:1fr;gap:28px}
+  .home-aside{display:grid;grid-template-columns:140px 1fr;gap:18px;align-items:start}
+  .card{margin-top:0}
+  .project,.cv-section{grid-template-columns:1fr;gap:10px}
+  .news li{grid-template-columns:1fr;gap:2px}
+  .entries li{grid-template-columns:1fr}
+  .entries .when{padding-top:0}
+  .skills div{grid-template-columns:1fr;gap:0}
+  .page-head h2{font-size:1.9rem}
+}
+@media print{
+  nav.primary,.masthead svg,.btn{display:none}
+  .page{display:block!important;page-break-before:always}
+  .page:first-child{page-break-before:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="rule"></div>
+  <svg viewBox="0 0 860 300" aria-hidden="true" focusable="false"><path d="M830.0,150.0 L832.1,168.5 L828.4,186.7 L818.8,204.0 L803.3,220.2 L782.2,234.9 L755.7,247.9 L724.3,258.9 L688.4,267.8 L648.7,274.5 L605.8,278.9 L560.5,281.0 L513.4,281.1 L465.5,279.1 L417.5,275.3 L370.0,270.0 L323.9,263.4 L279.7,255.7 L238.0,247.2 L199.4,238.2 L164.2,229.0 L132.8,219.7 L105.3,210.5 L82.0,201.7 L62.8,193.1 L47.8,185.1 L36.8,177.4 L29.7,170.2 L26.4,163.2 L26.5,156.6 L30.0,150.0 L36.5,143.4 L45.9,136.8 L58.0,129.8 L72.5,122.6 L89.4,114.9 L108.5,106.9 L129.7,98.3 L153.1,89.5 L178.4,80.3 L205.8,71.0 L235.1,61.8 L266.2,52.8 L299.2,44.3 L333.8,36.6 L370.0,30.0 L407.5,24.7 L446.0,20.9 L485.2,18.9 L524.8,19.0 L564.2,21.1 L603.0,25.5 L640.6,32.2 L676.5,41.1 L710.1,52.1 L740.6,65.1 L767.7,79.8 L790.6,96.0 L808.9,113.3 L822.2,131.5 L830.0,150.0Z"/><path d="M766.0,150.0 L767.8,165.6 L764.7,180.8 L756.6,195.4 L743.6,209.0 L725.8,221.4 L703.6,232.3 L677.2,241.5 L647.0,249.0 L613.7,254.6 L577.7,258.2 L539.6,260.1 L500.1,260.1 L459.8,258.4 L419.5,255.3 L379.6,250.8 L340.8,245.2 L303.7,238.8 L268.7,231.6 L236.3,224.1 L206.7,216.3 L180.3,208.5 L157.3,200.8 L137.7,193.4 L121.6,186.2 L109.0,179.4 L99.7,173.0 L93.8,166.9 L91.0,161.1 L91.1,155.5 L94.0,150.0 L99.5,144.5 L107.4,138.9 L117.5,133.1 L129.7,127.0 L143.9,120.6 L159.9,113.8 L177.8,106.6 L197.4,99.2 L218.7,91.5 L241.7,83.7 L266.3,75.9 L292.4,68.4 L320.1,61.2 L349.2,54.8 L379.6,49.2 L411.1,44.7 L443.4,41.6 L476.4,39.9 L509.6,39.9 L542.7,41.8 L575.3,45.4 L606.9,51.0 L637.1,58.5 L665.2,67.7 L690.9,78.6 L713.6,91.0 L732.9,104.6 L748.3,119.2 L759.4,134.4 L766.0,150.0Z"/><path d="M702.0,150.0 L703.5,162.6 L700.9,174.9 L694.4,186.7 L683.9,197.7 L669.5,207.8 L651.5,216.6 L630.1,224.1 L605.7,230.1 L578.7,234.6 L549.5,237.6 L518.7,239.1 L486.7,239.1 L454.2,237.8 L421.5,235.2 L389.2,231.6 L357.8,227.1 L327.8,221.9 L299.5,216.1 L273.2,210.0 L249.3,203.7 L227.9,197.4 L209.2,191.2 L193.4,185.1 L180.3,179.3 L170.1,173.8 L162.6,168.6 L157.8,163.7 L155.5,159.0 L155.7,154.5 L158.0,150.0 L162.4,145.5 L168.8,141.0 L177.0,136.3 L186.9,131.4 L198.4,126.2 L211.4,120.7 L225.8,114.9 L241.7,108.8 L258.9,102.6 L277.5,96.3 L297.4,90.0 L318.6,83.9 L341.0,78.1 L364.6,72.9 L389.2,68.4 L414.7,64.8 L440.9,62.2 L467.6,60.9 L494.5,60.9 L521.3,62.4 L547.7,65.4 L573.2,69.9 L597.6,75.9 L620.4,83.4 L641.2,92.2 L659.6,102.3 L675.2,113.3 L687.7,125.1 L696.7,137.4 L702.0,150.0Z"/><path d="M642.0,150.0 L643.1,159.8 L641.2,169.4 L636.1,178.6 L627.9,187.2 L616.7,195.0 L602.6,201.9 L586.0,207.7 L566.9,212.4 L545.9,216.0 L523.2,218.3 L499.1,219.4 L474.2,219.5 L448.8,218.4 L423.4,216.4 L398.2,213.6 L373.7,210.1 L350.3,206.0 L328.2,201.5 L307.8,196.8 L289.1,191.9 L272.5,186.9 L257.9,182.1 L245.6,177.4 L235.4,172.9 L227.4,168.6 L221.6,164.5 L217.9,160.7 L216.1,157.0 L216.2,153.5 L218.0,150.0 L221.5,146.5 L226.4,143.0 L232.8,139.3 L240.5,135.5 L249.5,131.4 L259.6,127.1 L270.9,122.6 L283.2,117.9 L296.7,113.1 L311.2,108.1 L326.7,103.2 L343.2,98.5 L360.7,94.0 L379.0,89.9 L398.2,86.4 L418.1,83.6 L438.5,81.6 L459.3,80.5 L480.2,80.6 L501.1,81.7 L521.7,84.0 L541.6,87.6 L560.7,92.3 L578.4,98.1 L594.6,105.0 L609.0,112.8 L621.1,121.4 L630.8,130.6 L637.8,140.2 L642.0,150.0Z"/><path d="M586.0,150.0 L586.8,157.2 L585.4,164.3 L581.6,171.1 L575.6,177.4 L567.4,183.1 L557.0,188.2 L544.8,192.5 L530.8,195.9 L515.3,198.5 L498.6,200.3 L480.9,201.1 L462.5,201.1 L443.9,200.3 L425.1,198.9 L406.6,196.8 L388.6,194.2 L371.4,191.2 L355.1,187.9 L340.1,184.4 L326.3,180.8 L314.1,177.2 L303.4,173.6 L294.3,170.1 L286.8,166.8 L280.9,163.7 L276.7,160.7 L273.9,157.9 L272.6,155.2 L272.7,152.6 L274.0,150.0 L276.5,147.4 L280.2,144.8 L284.9,142.1 L290.6,139.3 L297.2,136.3 L304.6,133.2 L312.9,129.9 L322.0,126.4 L331.9,122.8 L342.6,119.2 L354.0,115.6 L366.1,112.1 L379.0,108.8 L392.5,105.8 L406.6,103.2 L421.2,101.1 L436.2,99.7 L451.5,98.9 L467.0,98.9 L482.3,99.7 L497.5,101.5 L512.2,104.1 L526.1,107.5 L539.2,111.8 L551.1,116.9 L561.7,122.6 L570.6,128.9 L577.8,135.7 L582.9,142.8 L586.0,150.0Z"/><path d="M534.0,150.0 L534.6,154.8 L533.6,159.5 L531.1,164.0 L527.1,168.3 L521.6,172.1 L514.7,175.5 L506.5,178.3 L497.2,180.6 L486.9,182.4 L475.7,183.5 L463.9,184.1 L451.7,184.1 L439.2,183.6 L426.7,182.6 L414.4,181.2 L402.4,179.5 L390.9,177.5 L380.1,175.3 L370.0,172.9 L360.9,170.5 L352.7,168.1 L345.6,165.7 L339.5,163.4 L334.5,161.2 L330.6,159.1 L327.8,157.1 L325.9,155.2 L325.1,153.4 L325.1,151.7 L326.0,150.0 L327.7,148.3 L330.1,146.6 L333.3,144.8 L337.0,142.9 L341.4,140.9 L346.4,138.8 L351.9,136.6 L358.0,134.3 L364.6,131.9 L371.7,129.5 L379.3,127.1 L387.4,124.7 L396.0,122.5 L405.0,120.5 L414.4,118.8 L424.1,117.4 L434.2,116.4 L444.4,115.9 L454.6,115.9 L464.9,116.5 L475.0,117.6 L484.8,119.4 L494.1,121.7 L502.8,124.5 L510.8,127.9 L517.8,131.7 L523.8,136.0 L528.5,140.5 L532.0,145.2 L534.0,150.0Z"/><path d="M486.0,150.0 L486.3,152.6 L485.8,155.1 L484.4,157.6 L482.3,159.8 L479.3,161.9 L475.6,163.7 L471.2,165.3 L466.2,166.5 L460.6,167.4 L454.6,168.0 L448.3,168.3 L441.7,168.3 L435.0,168.1 L428.2,167.5 L421.6,166.8 L415.1,165.9 L409.0,164.8 L403.1,163.6 L397.7,162.4 L392.8,161.1 L388.4,159.8 L384.5,158.5 L381.3,157.2 L378.6,156.0 L376.5,154.9 L375.0,153.8 L374.0,152.8 L373.5,151.9 L373.5,150.9 L374.0,150.0 L374.9,149.1 L376.2,148.1 L377.9,147.2 L379.9,146.2 L382.3,145.1 L385.0,144.0 L388.0,142.8 L391.2,141.5 L394.8,140.2 L398.6,138.9 L402.7,137.6 L407.1,136.4 L411.7,135.2 L416.5,134.1 L421.6,133.2 L426.8,132.5 L432.2,131.9 L437.7,131.7 L443.3,131.7 L448.8,132.0 L454.2,132.6 L459.5,133.5 L464.5,134.7 L469.2,136.3 L473.5,138.1 L477.3,140.2 L480.5,142.4 L483.0,144.9 L484.9,147.4 L486.0,150.0Z"/></svg>
+  <div class="container mast-inner">
+    <p class="affil">School of Earth and Atmospheric Sciences, Georgia Institute of Technology</p>
+    <h1>Alessandro Raganato</h1>
+    <p class="title">Ph.D. Researcher in Physics, Climate Dynamics</p>
+  </div>
+</header>
+
+<nav class="primary" aria-label="Main">
+  <div class="container">
+    <ul>
+      <li><a href="#home" data-page="home">Home</a></li>
+      <li><a href="#research" data-page="research">Research</a></li>
+      <li><a href="#publications" data-page="publications">Publications</a></li>
+      <li><a href="#cv" data-page="cv">Curriculum Vitae</a></li>
+      <li><a href="#teaching" data-page="teaching">Teaching</a></li>
+      <li><a href="#contact" data-page="contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main" class="container" tabindex="-1">
+
+<!-- ===================== HOME ===================== -->
+<section class="page" id="page-home" aria-label="Home">
+  <div class="home-grid">
+    <div class="home-aside">
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Alessandro Raganato" width="640" height="800">
+      <div class="card">
+        <p><strong>Alessandro Raganato</strong>School of Earth and Atmospheric Sciences<br>Georgia Institute of Technology<br>Atlanta, GA</p>
+        <p><a href="mailto:araganato3@gatech.edu">araganato3@gatech.edu</a><br><a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Alessandro+Raganato" rel="noopener">Google Scholar</a><br><a href="cv.pdf">Curriculum Vitae (PDF)</a></p>
+      </div>
+    </div>
+    <div class="bio">
+      <p>I am a Ph.D. researcher in Physics at the Georgia Institute of Technology, advised by Professor Annalisa Bracco in the School of Earth and Atmospheric Sciences.</p>
+      <p>My research sits at the intersection of climate dynamics and data science. I study the variability of the ocean and atmosphere, with particular attention to the Atlantic Meridional Overturning Circulation, and develop data-driven methods to evaluate how faithfully climate models reproduce it. My work draws on dimensionality reduction, manifold learning and information theory, applied to multi-terabyte datasets on U.S. Department of Energy high-performance computing systems.</p>
+      <p>I collaborate with Los Alamos National Laboratory through the DOE-supported ImPACTS SciDAC project. Before Georgia Tech, I was a scientific consultant in the Earth System Physics Section of the International Centre for Theoretical Physics in Trieste, and I received my M.Sc. in Physics <i>cum laude</i> from the University of Trieste.</p>
+
+      <div class="block">
+        <h4>Research interests</h4>
+        <ul class="interests">
+          <li>Ocean circulation and the AMOC</li>
+          <li>Climate model evaluation</li>
+          <li>Tropical–extratropical teleconnections</li>
+          <li>Nonlinear dynamical systems</li>
+          <li>Manifold learning</li>
+          <li>Large-scale geophysical data</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h4>Recent news</h4>
+        <ul class="news">
+          <li><time>Aug 2026</time><span>Took part in the E3SM Webinar series.</span></li>
+          <li><time>2026</time><span>“AMOC discrepancies across reanalyses and models limit dynamical understanding” published in the <i>Journal of Climate</i>.</span></li>
+          <li><time>May 2026</time><span>Attended the ImPACTS SciDAC All Hands Annual Meeting at Los Alamos, NM.</span></li>
+          <li><time>2025</time><span>Co-authored paper on Indian Ocean SST variability and Euro-Mediterranean storm activity published in <i>Geophysical Research Letters</i>.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section class="page" id="page-research" aria-label="Research">
+  <div class="page-head">
+    <h2>Research</h2>
+    <p>Climate dynamics, model evaluation, and data-driven methods for complex geophysical systems</p>
+  </div>
+  <div class="projects">
+    <article class="project">
+      <div class="side"><strong>Atlantic Meridional Overturning Circulation</strong>Georgia Tech, with Los Alamos National Laboratory<span class="status">Ongoing</span></div>
+      <div>
+        <h3>Why models and reanalyses disagree about the AMOC</h3>
+        <p>The Atlantic Meridional Overturning Circulation transports heat and freshwater northward and is central to climate on both sides of the Atlantic. Reanalyses and climate models nonetheless offer markedly different estimates of its strength and variability. This work compares these products systematically, examining freshwater transport, temperature and salinity, and quantifies how model resolution and configuration alter the simulated circulation.</p>
+        <p class="note">Related: Raganato et al. (2026), <i>Journal of Climate</i>.</p>
+      </div>
+    </article>
+    <article class="project">
+      <div class="side"><strong>Methods</strong>Georgia Tech<span class="status">Ongoing</span></div>
+      <div>
+        <h3>Data-driven evaluation of climate models</h3>
+        <p>Building on the manifold-learning framework of Falasca et al. (2022), I apply dimensionality reduction, mutual information and time-series analysis to identify structure and dependencies in high-dimensional climate fields. The aim is to measure where a model’s dynamics depart from the observed system, rather than comparing mean states alone.</p>
+      </div>
+    </article>
+    <article class="project">
+      <div class="side"><strong>Teleconnections</strong>ICTP, Trieste<span class="status">2022 – 2025</span></div>
+      <div>
+        <h3>Tropical forcing of the North Atlantic–European climate</h3>
+        <p>With Fred Kucharski and Muhammad Adnan Abid, I studied the combined influence of the Indian Ocean Dipole and ENSO on the North Atlantic–European circulation in early boreal winter, using ERA5 reanalysis and the ECMWF SEAS5 hindcast. Experiments with the SPEEDY atmospheric model tested how the strength of the subtropical jet shapes the extratropical response, with implications for seasonal predictability over Europe.</p>
+        <p class="note">Related: Raganato et al. (2025), <i>Journal of Climate</i>; Reale et al. (2025), <i>Geophysical Research Letters</i>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section class="page" id="page-publications" aria-label="Publications">
+  <div class="page-head">
+    <h2>Publications</h2>
+    <p>Peer-reviewed journal articles</p>
+  </div>
+  <ol class="pubs">
+    <li><div>
+      <span class="t">AMOC discrepancies across reanalyses and models limit dynamical understanding</span>
+      <span class="a"><b>Raganato, A.</b>, Bracco, A., Van Roekel, L., &amp; Iovino, D.</span>
+      <span class="v"><i>Journal of Climate</i> (2026)</span>
+      <span class="links"><a href="https://doi.org/10.1175/JCLI-D-25-0618.1">DOI</a></span>
+    </div></li>
+    <li><div>
+      <span class="t">Response of early winter precipitation and storm activity in the North Atlantic–European–Mediterranean region to Indian Ocean SST variability</span>
+      <span class="a">Reale, M., <b>Raganato, A.</b>, d’Andrea, F., Abid, M. A., Hochman, A., Chowdhury, N. R., … &amp; Kucharski, F.</span>
+      <span class="v"><i>Geophysical Research Letters</i>, 52(20), e2025GL116732 (2025)</span>
+      <span class="links"><a href="https://doi.org/10.1029/2025GL116732">DOI</a></span>
+    </div></li>
+    <li><div>
+      <span class="t">The combined link of the Indian Ocean Dipole and ENSO with the North Atlantic–European circulation during early boreal winter in reanalysis and the ECMWF SEAS5 hindcast</span>
+      <span class="a"><b>Raganato, A.</b>, Abid, M. A., &amp; Kucharski, F.</span>
+      <span class="v"><i>Journal of Climate</i>, 38(2), 445–460 (2025)</span>
+    </div></li>
+  </ol>
+  <p class="note">A complete and current list is available on <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Alessandro+Raganato" rel="noopener">Google Scholar</a>.</p>
+</section>
+
+<!-- ===================== CV ===================== -->
+<section class="page" id="page-cv" aria-label="Curriculum Vitae">
+  <div class="page-head cv-top">
+    <div><h2>Curriculum Vitae</h2><p>Updated September 2026</p></div>
+    <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+  </div>
+
+  <div class="cv-section"><h3>Education</h3>
+    <ul class="entries">
+      <li><span class="what">Ph.D. in Physics, Georgia Institute of Technology</span><span class="when">2024 – 2027 (expected)</span><span class="detail">School of Earth and Atmospheric Sciences. Advisor: Prof. Annalisa Bracco.</span></li>
+      <li><span class="what">M.Sc. in Physics, <i>cum laude</i>, University of Trieste</span><span class="when">2020 – 2023</span><span class="detail">Thesis: Extra-tropical response to tropical forcing in the SPEEDY model compared to observations and its dependence on the modifications of the subtropical jet in boreal winter. Advisors: Prof. Fred Kucharski, Dr. Muhammad Adnan Abid.</span></li>
+      <li><span class="what">B.Sc. in Physics, Sapienza University of Rome</span><span class="when">2016 – 2020</span><span class="detail">Thesis: Description of the Larmor formula in a massive field. Advisor: Prof. Paolo Pani.</span></li>
+    </ul>
+  </div>
+
+  <div class="cv-section"><h3>Research experience</h3>
+    <ul class="entries">
+      <li><span class="what">Graduate Researcher, Georgia Institute of Technology</span><span class="when">2024 – present</span><span class="detail">Data-driven evaluation of climate models and AMOC dynamics; scalable Python workflows on DOE high-performance computing systems (NERSC/Perlmutter); collaboration with Los Alamos National Laboratory on DOE-supported projects.</span></li>
+      <li><span class="what">Scientific Consultant, International Centre for Theoretical Physics</span><span class="when">Apr – Oct 2023</span><span class="detail">Earth System Physics Section, Trieste. ENSO teleconnections and the role of the Indian Ocean Dipole in the NAO response during early boreal winter.</span></li>
+    </ul>
+  </div>
+
+  <div class="cv-section"><h3>Honors</h3>
+    <ul class="entries">
+      <li><span class="what">M.Sc. awarded <i>cum laude</i>, University of Trieste</span><span class="when">2023</span></li>
+    </ul>
+  </div>
+
+  <div class="cv-section"><h3>Presentations and meetings</h3>
+    <ul class="entries">
+      <li><span class="what">E3SM Webinar</span><span class="when">Aug 2026</span><span class="detail">Online</span></li>
+      <li><span class="what">ImPACTS SciDAC All Hands Annual Meeting</span><span class="when">May 2026</span><span class="detail">Los Alamos, NM</span></li>
+      <li><span class="what">21st Annual EAS Graduate Research Symposium</span><span class="when">Apr 2025</span><span class="detail">Atlanta, GA</span></li>
+      <li><span class="what">APS March Meeting, GPC-sponsored session</span><span class="when">Mar 2025</span><span class="detail">Anaheim, CA</span></li>
+      <li><span class="what">CESM Tutorial</span><span class="when">Aug 2024</span><span class="detail">Boulder, CO</span></li>
+      <li><span class="what">CAMAS Workshop and Early-Career School</span><span class="when">Feb 2024</span><span class="detail">Santa Fe, NM</span></li>
+      <li><span class="what">ESP Section seminar: The impact of the Indian Ocean Dipole on the North Atlantic–European circulation during early boreal winter</span><span class="when">Oct 2023</span><span class="detail">ICTP, Trieste</span></li>
+      <li><span class="what">4th Summer School on Theory, Mechanisms and Hierarchical Modeling of Climate Dynamics</span><span class="when">Aug 2023</span><span class="detail">ICTP, Trieste</span></li>
+      <li><span class="what">ESP Section seminar: The role of the subtropical jet in the Euro-Atlantic teleconnections</span><span class="when">Feb 2023</span><span class="detail">ICTP, Trieste</span></li>
+    </ul>
+  </div>
+
+  <div class="cv-section"><h3>Technical skills</h3>
+    <dl class="skills">
+      <div><dt>Programming</dt><dd>Python, C/C++, Fortran</dd></div>
+      <div><dt>Scientific computing</dt><dd>NumPy, SciPy, pandas, xarray, scikit-learn, Matplotlib</dd></div>
+      <div><dt>Methods</dt><dd>Statistical analysis, PCA and dimensionality reduction, manifold learning, mutual information, time-series analysis, numerical methods</dd></div>
+      <div><dt>High-performance computing</dt><dd>Linux, Bash, Slurm, NERSC/Perlmutter</dd></div>
+    </dl>
+  </div>
+
+  <div class="cv-section"><h3>Languages</h3>
+    <dl class="skills">
+      <div><dt>Italian</dt><dd>Native</dd></div>
+      <div><dt>English</dt><dd>Fluent (TOEFL iBT 100/120)</dd></div>
+      <div><dt>Spanish</dt><dd>Basic</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== TEACHING ===================== -->
+<section class="page" id="page-teaching" aria-label="Teaching">
+  <div class="page-head">
+    <h2>Teaching</h2>
+    <p>Georgia Institute of Technology</p>
+  </div>
+  <div class="projects">
+    <article class="project">
+      <div class="side"><strong>Spring 2024</strong>School of Earth and Atmospheric Sciences<span class="status">Teaching Assistant</span></div>
+      <div>
+        <h3>Introduction to Environmental Sciences</h3>
+        <p>Prepared in-class activities and course assessments for groups of 15–25 undergraduate students, and graded student work to keep the class on track with the material.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="page" id="page-contact" aria-label="Contact">
+  <div class="page-head">
+    <h2>Contact</h2>
+    <p>I welcome inquiries about research collaborations and opportunities.</p>
+  </div>
+  <div class="contact-grid">
+    <div><div class="label">Email</div><p><a href="mailto:araganato3@gatech.edu">araganato3@gatech.edu</a></p></div>
+    <div><div class="label">Mailing address</div><p>School of Earth and Atmospheric Sciences<br>Georgia Institute of Technology<br>Atlanta, GA 30332, USA</p></div>
+    <div><div class="label">Profiles</div><p><a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Alessandro+Raganato" rel="noopener">Google Scholar</a></p></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Alessandro Raganato</span>
+    <span>School of Earth and Atmospheric Sciences, Georgia Institute of Technology</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pages=['home','research','publications','cv','teaching','contact'];
+  var links=[].slice.call(document.querySelectorAll('nav.primary a'));
+  function show(fromClick){
+    var id=(location.hash||'#home').slice(1);
+    if(pages.indexOf(id)<0)id='home';
+    pages.forEach(function(p){document.getElementById('page-'+p).classList.toggle('active',p===id)});
+    links.forEach(function(a){if(a.dataset.page===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.title=(id==='home'?'Alessandro Raganato':document.querySelector('[data-page="'+id+'"]').textContent+' | Alessandro Raganato')+' | Georgia Tech';
+    if(fromClick){var nav=document.querySelector('nav.primary');var y=nav.offsetTop;if(window.scrollY>y)window.scrollTo(0,y);document.getElementById('main').focus({preventScroll:true})}
+  }
+  window.addEventListener('hashchange',function(){show(true)});
+  show(false);
+})();
+</script>
+</body>
+</html>
