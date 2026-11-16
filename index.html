@@ -15,7 +15,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Alessandro Raganato">
 <meta property="og:title" content="Alessandro Raganato | Climate Physics, Georgia Tech">
-<meta property="og:description" content="Ph.D. researcher in climate physics at Georgia Tech. Ocean and atmospheric dynamics, the AMOC, and data-driven evaluation of climate models.">
+<meta property="og:description" content="Ph.D. candidate in climate physics at Georgia Tech. Ocean and atmospheric dynamics, the AMOC, and data-driven evaluation of climate models.">
 <meta property="og:url" content="https://alessandroraganato.com/">
 <meta property="og:image" content="https://alessandroraganato.com/portrait.jpg">
 <meta property="og:image:secure_url" content="https://alessandroraganato.com/portrait.jpg">
@@ -27,7 +27,7 @@
 <meta property="profile:last_name" content="Raganato">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Alessandro Raganato | Climate Physics, Georgia Tech">
-<meta name="twitter:description" content="Ph.D. researcher in climate physics at Georgia Tech. Ocean and atmospheric dynamics, the AMOC, and data-driven evaluation of climate models.">
+<meta name="twitter:description" content="Ph.D. candidate in climate physics at Georgia Tech. Ocean and atmospheric dynamics, the AMOC, and data-driven evaluation of climate models.">
 <meta name="twitter:image" content="https://alessandroraganato.com/portrait.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23003057'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23B3A369' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="portrait.jpg">
@@ -103,8 +103,6 @@ p{margin:0 0 1em;max-width:68ch}
 .card a{color:var(--ink)}
 .card p{margin:0 0 12px}
 .bio p:first-child{font-size:1.38rem;line-height:1.5}
-.interests{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;padding:0;margin:8px 0 0}
-.interests li{font-family:var(--sans);font-size:.84rem;border:1px solid var(--rule);padding:4px 12px;border-radius:999px;color:var(--ink)}
 .block{margin-top:44px}
 .news{list-style:none;padding:0;margin:0}
 .news li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:18px;padding:12px 0;border-top:1px solid var(--rule)}
@@ -128,6 +126,10 @@ p{margin:0 0 1em;max-width:68ch}
 .pubs .a{display:block;color:var(--muted);font-size:1.08rem;margin-top:4px}
 .pubs .a b{color:var(--ink);font-weight:600}
 .pubs .v{display:block;font-size:1.08rem}
+.pubs.plain li{grid-template-columns:minmax(0,1fr)}
+.pubs.plain li::before{content:none}
+.pub-group{font-size:1.2rem;font-weight:500;font-style:italic;margin:44px 0 6px}
+.page-head + .pub-group{margin-top:0}
 .pubs .links{display:flex;gap:14px;margin-top:8px;font-family:var(--sans);font-size:.82rem}
 .note{font-family:var(--sans);font-size:.86rem;color:var(--muted);margin-top:22px}
 
@@ -177,7 +179,7 @@ footer a{color:var(--muted)}
   <div class="container mast-inner">
     <p class="affil">School of Earth and Atmospheric Sciences, Georgia Institute of Technology</p>
     <h1>Alessandro Raganato</h1>
-    <p class="title">Ph.D. Researcher in Physics, Climate Dynamics</p>
+    <p class="title">Ph.D. Candidate in Physics, Climate Dynamics</p>
   </div>
 </header>
 
@@ -207,21 +209,10 @@ footer a{color:var(--muted)}
       </div>
     </div>
     <div class="bio">
-      <p>I am a Ph.D. researcher in Physics at the Georgia Institute of Technology, advised by Professor Annalisa Bracco in the School of Earth and Atmospheric Sciences.</p>
+      <p>I am a Ph.D. candidate in Physics at the Georgia Institute of Technology, advised by Professor Annalisa Bracco in the School of Earth and Atmospheric Sciences.</p>
       <p>My research sits at the intersection of climate dynamics and data science. I study the variability of the ocean and atmosphere, with particular attention to the Atlantic Meridional Overturning Circulation, and develop data-driven methods to evaluate how faithfully climate models reproduce it. My work draws on dimensionality reduction, manifold learning and information theory, applied to multi-terabyte datasets on U.S. Department of Energy high-performance computing systems.</p>
       <p>I collaborate with Los Alamos National Laboratory through the DOE-supported ImPACTS SciDAC project. Before Georgia Tech, I was a scientific consultant in the Earth System Physics Section of the International Centre for Theoretical Physics in Trieste, and I received my M.Sc. in Physics <i>cum laude</i> from the University of Trieste.</p>
-
-      <div class="block">
-        <h4>Research interests</h4>
-        <ul class="interests">
-          <li>Ocean circulation and the AMOC</li>
-          <li>Climate model evaluation</li>
-          <li>Tropical–extratropical teleconnections</li>
-          <li>Nonlinear dynamical systems</li>
-          <li>Manifold learning</li>
-          <li>Large-scale geophysical data</li>
-        </ul>
-      </div>
+      <p>Outside research, I am a big Dave Matthews Band fan, and in my free time I enjoy going to concerts and reading. My three favorite books, in no particular order, are <i>One Hundred Years of Solitude</i>, <i>Anna Karenina</i> and <i>The Count of Monte Cristo</i>.</p>
 
       <div class="block">
         <h4>Recent news</h4>
@@ -240,11 +231,10 @@ footer a{color:var(--muted)}
 <section class="page" id="page-research" aria-label="Research">
   <div class="page-head">
     <h2>Research</h2>
-    <p>Climate dynamics, model evaluation, and data-driven methods for complex geophysical systems</p>
   </div>
   <div class="projects">
     <article class="project">
-      <div class="side"><strong>Atlantic Meridional Overturning Circulation</strong>Georgia Tech, with Los Alamos National Laboratory<span class="status">Ongoing</span></div>
+      <div class="side"><strong>Atlantic Meridional Overturning Circulation</strong>Georgia Tech, with Los Alamos National Laboratory</div>
       <div>
         <h3>Why models and reanalyses disagree about the AMOC</h3>
         <p>The Atlantic Meridional Overturning Circulation transports heat and freshwater northward and is central to climate on both sides of the Atlantic. Reanalyses and climate models nonetheless offer markedly different estimates of its strength and variability. This work compares these products systematically, examining freshwater transport, temperature and salinity, and quantifies how model resolution and configuration alter the simulated circulation.</p>
@@ -252,14 +242,14 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="project">
-      <div class="side"><strong>Methods</strong>Georgia Tech<span class="status">Ongoing</span></div>
+      <div class="side"><strong>Methods</strong>Georgia Tech</div>
       <div>
         <h3>Data-driven evaluation of climate models</h3>
         <p>Building on the manifold-learning framework of Falasca et al. (2022), I apply dimensionality reduction, mutual information and time-series analysis to identify structure and dependencies in high-dimensional climate fields. The aim is to measure where a model’s dynamics depart from the observed system, rather than comparing mean states alone.</p>
       </div>
     </article>
     <article class="project">
-      <div class="side"><strong>Teleconnections</strong>ICTP, Trieste<span class="status">2022 – 2025</span></div>
+      <div class="side"><strong>Teleconnections</strong>ICTP, Trieste</div>
       <div>
         <h3>Tropical forcing of the North Atlantic–European climate</h3>
         <p>With Fred Kucharski and Muhammad Adnan Abid, I studied the combined influence of the Indian Ocean Dipole and ENSO on the North Atlantic–European circulation in early boreal winter, using ERA5 reanalysis and the ECMWF SEAS5 hindcast. Experiments with the SPEEDY atmospheric model tested how the strength of the subtropical jet shapes the extratropical response, with implications for seasonal predictability over Europe.</p>
@@ -273,13 +263,13 @@ footer a{color:var(--muted)}
 <section class="page" id="page-publications" aria-label="Publications">
   <div class="page-head">
     <h2>Publications</h2>
-    <p>Peer-reviewed journal articles</p>
   </div>
+  <h3 class="pub-group">Journal articles</h3>
   <ol class="pubs">
     <li><div>
-      <span class="t">AMOC discrepancies across reanalyses and models limit dynamical understanding</span>
+      <span class="t">AMOC Discrepancies across Reanalyses and Models Limit Dynamical Understanding</span>
       <span class="a"><b>Raganato, A.</b>, Bracco, A., Van Roekel, L., &amp; Iovino, D.</span>
-      <span class="v"><i>Journal of Climate</i> (2026)</span>
+      <span class="v"><i>Journal of Climate</i>, 39(19), 5695–5716 (2026)</span>
       <span class="links"><a href="https://doi.org/10.1175/JCLI-D-25-0618.1">DOI</a></span>
     </div></li>
     <li><div>
@@ -292,8 +282,40 @@ footer a{color:var(--muted)}
       <span class="t">The combined link of the Indian Ocean Dipole and ENSO with the North Atlantic–European circulation during early boreal winter in reanalysis and the ECMWF SEAS5 hindcast</span>
       <span class="a"><b>Raganato, A.</b>, Abid, M. A., &amp; Kucharski, F.</span>
       <span class="v"><i>Journal of Climate</i>, 38(2), 445–460 (2025)</span>
+      <span class="links"><a href="https://doi.org/10.1175/JCLI-D-23-0703.1">DOI</a></span>
     </div></li>
   </ol>
+
+  <h3 class="pub-group">Working papers</h3>
+  <ul class="pubs plain">
+    <li><div>
+      <span class="t">Structure of the AMOC Attractor Across Reanalyses and Ocean Models</span>
+      <span class="v">Working paper</span>
+    </div></li>
+  </ul>
+
+  <h3 class="pub-group">Talks and presentations</h3>
+  <ul class="pubs plain">
+    <li><div>
+      <span class="t">E3SM Webinar</span>
+      <span class="v">Online, August 2026</span>
+      <span class="links"><a href="https://e3sm.atlassian.net/wiki/spaces/ECM/pages/6608257025/2026-08-27+All-Hands+Presentation+Meeting+Notes?xpis=eyJicmlkZ2UiOiJzbWFydExpbmtzIiwiaWQiOiIxNzk0ODU4NDE2ODA4Iiwic291cmNlIjoiY29uZmx1ZW5jZSJ9" rel="noopener">Session</a></span>
+    </div></li>
+    <li><div>
+      <span class="t">All Hands Annual Meeting 2026, ImPACTS SciDAC Project</span>
+      <span class="v">Los Alamos, NM, May 2026</span>
+    </div></li>
+    <li><div>
+      <span class="t">Advancing the Understanding of AMOC Dynamics and Stability through Manifold Learning</span>
+      <span class="a"><b>Raganato, A.</b>, &amp; Bracco, A.</span>
+      <span class="v"><i>APS Global Physics Summit 2025</i>, March 2025</span>
+    </div></li>
+    <li><div>
+      <span class="t">The combined impact of Indian Ocean dipole and ENSO on the North Atlantic–European circulation during early boreal winter in re-analysis and in the ECMWF-SEAS5 hindcast</span>
+      <span class="a">Kucharski, F., <b>Raganato, A.</b>, &amp; Adnan Abid, M.</span>
+      <span class="v"><i>European Geosciences Union General Assembly 2024 (EGU24)</i>, 3110 (2024)</span>
+    </div></li>
+  </ul>
   <p class="note">A complete and current list is available on <a href="https://scholar.google.com/citations?user=MlIGTbAAAAAJ" rel="noopener">Google Scholar</a>.</p>
 </section>
 
